@@ -13,10 +13,10 @@ if(!is_administrator()){
 
 //检查表单是否提交
 if($_SERVER['REQUEST_METHOD']=='POST'){
-	if(!empty($_POST['quote'])&&!empty($_POST['sourse'])){
+	if(!empty($_POST['quote'])&&!empty($_POST['source'])){
 		include('mysql_connect.php');//这里因为mysql_connect.php的位置放的不同，我写的和原来不相同
 		
-		$quoto=mysql_real_escape_string(trim(strip_tags($_POST['quote'])),$dbc);
+		$quote=mysql_real_escape_string(trim(strip_tags($_POST['quote'])),$dbc);
 		$source=mysql_real_escape_string(trim(strip_tags($_POST['source'])),$dbc);
 		
 		//创建favorite值
@@ -26,7 +26,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 			$favorite=0;
 		}
 		
-		$query="insert into quotes(quote,source,favourite) values ('$quote','$source','$favorite')";
+		$query="insert into quotes(quote,source,favorite) values ('$quote','$source','$favorite')";
 		$r=mysql_query($query,$dbc);
 		
 		if(mysql_affected_rows($dbc)==1){
@@ -46,7 +46,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 <form action="add_quote.php" method="post">
 	<p><label>Quote<textarea name="quote" rows="5" cols="30"></textarea></label></p>
 	<p><label>Source<input type="text" name="source"/></label></p>
-	<p><label>Is this a favorite?<input type="checkbox" name="favorite" value="yes"></label></p>
+	<p><label>Is this a favorite?<input type="checkbox" name="favorite" value="yes"/></label></p>
 	<p><input type="submit" name="submit" value="Add This Quote!" /></p>
 </form>
 

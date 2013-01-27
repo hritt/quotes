@@ -4,9 +4,9 @@ $loggedin=false;
 $error=false;
 
 //检查表单是否提交
-if($_SERVER['REQUEST_METHOD']=='Post'){
+if($_SERVER['REQUEST_METHOD']=='POST'){
 	if(!empty($_POST['email'])&& !empty($_POST['password'])){
-		if((strtolower($_POST['email'])=='me@example.com')&&($_POST['password']=='testpass')){
+		if((strtolower($_POST['email'])=='a@a.com')&&($_POST['password']=='aaa')){
 			setcookie('Samuel','Clemens',time()+3600);//创建cookie//1小时后再次登录
 			$loggedin=true;//标识已登录
 		}else{
@@ -33,7 +33,7 @@ if($loggedin){
 	print '<h2>Login Form</h2>
 		   <form action="login.php" method="post">
 		   <p><label>Email Address<input type="text" name="email"/></label></p>
-		   <p><label>Password<input type="password" name="password"/></label></p>
+		   <p><label>Password &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="password"/></label></p>
 		   <p><input type="submit" name="submit" value="Log In"/></p>
 		   </form>';
 }

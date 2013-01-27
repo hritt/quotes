@@ -19,7 +19,7 @@ a:link,a:visited{ text-decoration:none; color:#666; border-bottom:1px #999 dashe
 a:hover,a:active{ color:#333; border-bottom:1px #333 solid; }
 
 /* --------- Layout --------- */
-#container{ margin:20px auto 30px; width:65%; }/*container部分宽度为居中65%*/
+#container{ margin:20px auto 30px; width:55%; }/*container部分宽度为居中65%*/
 #footer{ color:#999; font-size:75%; margin-bottom:50px; text-align:center; }
 
 /* --------- Header Tags --------- */

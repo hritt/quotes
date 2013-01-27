@@ -5,9 +5,12 @@
 //显示管理连接......
 if(  (is_administrator()&&(basename($_SERVER['PHP_SELF'])!='logout.php')) or (isset($loggedin) && $loggedin)  ){
 	print '<hr/><h3>Admin</h3><p><a href="add_quote.php">Add Quote</a><->
-								 <a href="view_quotes.php">View All Quotes</a><->
-								 <a href="logout.php">Logout</a><p>';
+								 <a href="view_quote.php">View All Quotes</a><->
+								 <a href="logout.php">Logout</a><->';
+}else{
+	print '<p><a href="login.php">Login</a><->';
 }
+print '<a href="index.php">Index</a><p>'
 ?>
 </div>
 <div id="footer">Content &copy;2013 </div>
